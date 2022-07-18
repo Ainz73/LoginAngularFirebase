@@ -1,10 +1,23 @@
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
       <img src="https://media-exp1.licdn.com/dms/image/C5603AQGmbrTAIbG4zA/profile-displayphoto-shrink_200_200/0/1584121485507?e=2147483647&v=beta&t=zZgk9tZG_qdKP6_FCYmsizW8BCkWzxDiysXKoqHah3Q" width="30" height="30" class="d-inline-block align-top" alt="">
       Bienvenido
     </a>
-    <a class="navbar-brand" href="#" *ngIf="userLogged|async as user">
-        <img style="border-radius: 100%;" *ngIf="user.photoURL" src="https://media-exp1.licdn.com/dms/image/C5603AQGmbrTAIbG4zA/profile-displayphoto-shrink_200_200/0/1584121485507?e=2147483647&v=beta&t=zZgk9tZG_qdKP6_FCYmsizW8BCkWzxDiysXKoqHah3Q" width="30" height="30" class="d-inline-block align-top" alt="">
-        {{ user.displayName }}
-      </a>
+
+
+    <div ngbDropdown class="d-inline-block" *ngIf="userLogged|async as user; else btnIngresar">
+      <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+        <img style="border-radius: 100%;" *ngIf="user.photoURL" src="https://media-exp1.licdn.com/dms/image/C5603AQGmbrTAIbG4zA/profile-displayphoto-shrink_200_200/0/1584121485507?e=2147483647&v=beta&t=zZgk9tZG_qdKP6_FCYmsizW8BCkWzxDiysXKoqHah3Q" width="30" height="30" 
+        class="d-inline-block align-top" alt="">
+        {{ user.displayName?user.displayName: user.email }}
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem (click)="logout()">Salir</button>
+      </div>
+    </div>
+
+    <ng-template #btnIngresar>
+      <button type="button" class="btn btn-outline-primary" routerLink="/login"> Ingresar </button>
+      </ng-template>
+
   </nav>
