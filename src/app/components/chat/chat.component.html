@@ -7,12 +7,12 @@
 
 <div class="card text-center cardContainer" *ngIf="usuarioLogeado && mostrarChat">
 
-    <div class="card-header">
+    <div class="card-header stylechat" (click)="mostrarChat=false">
         CHAT
         <div class="closeIcon"(click)="mostrarChat=false">X</div>
     </div>
 
-    <div class="card-body">
+    <div id="chat-window" class="card-body" >
         <div id="contenedorDeMensajes" class="contenedorDeMensajes h-100">
             <p *ngFor="let mensaje of mensajes" class="msj p-2"
             [ngClass]="(usuarioLogeado.uid==mensaje.emisor)? 'enviado' : 'recibido'"
@@ -22,7 +22,8 @@
         </div>
 
     </div>
-    <form class="card-footer text-muted input-group" (ngSubmit)="enviarMensaje()">
+
+    <form class="card-footer text-muted input-group positionChat" (ngSubmit)="enviarMensaje()">
         <input type="text" class="form-control" placeholder="ingrese su mensaje" [(ngModel)]="nuevoMensaje"
         [ngModelOptions]="{standalone: true}">
         <div class="input-group-append" (click)="enviarMensaje()">

@@ -1,18 +1,16 @@
 <div class="container">
 
     <div class="card text-center">
-      <div class="card-header">
-        <b>LOGIN</b>
+      <div class="card-header styleLogin">
+        <b class="styleText">LOGIN</b>
       </div>
       <div class="card-body p-4">
-        <label style="float: left;">Email</label>
-        <input class="form-control m-2" type="email" placeholder="Ingrese su Email" [(ngModel)]="usuario.email">
-  
-        <label style="float: left;">Password</label>
-        <input class="form-control m-2" type="password" placeholder="Ingrese su Password" [(ngModel)]="usuario.password">
+        <input class="form-control m-2 styleTextinput" type="email" placeholder="Ingrese su Email" [(ngModel)]="usuario.email" autocomplete="email" required="email">
+
+        <input class="form-control m-2 styleTextinput" type="password" placeholder="Ingrese su contraseña" [(ngModel)]="usuario.password" required="password">
         
         <button class="btn btn-primary btn-block m-2" (click)="Ingresar()">Ingresar</button>
-        <button class="btn btn-info btn-block m-2" (click)="IngresarConGoogle()">Ingresar con google</button>
+        <button class="btn btn-google btn-block m-2 styleGoogle" (click)="IngresarConGoogle()">Ingresar con Google</button>
         <label> Necesitas cuenta? <a routerLink="/register">Registrarse</a> </label>
         <div>
         </div>

@@ -60,14 +60,14 @@ export class ChatComponent implements OnInit {
       this.scrollToTheLastElementByClassName();
     }, 20);
     this.scrollToTheLastElementByClassName();
-  }
+  };
 
   scrollToTheLastElementByClassName() {
-    let elements = document.getElementsByClassName('msj');
-    let ultimo: any = elements[(elements.length - 1)]; 
-    let toppos = ultimo.offsetTop;
-    //@ts-ignore
-    document.getElementById('contenedorDeMensajes')?.scrollTop=toppos;
-  }
-
-}
+    // let elements = document.getElementsByClassName('msj');
+    // let ultimo: any = elements[(elements.length - 1)]; 
+    // let toppos = ultimo.offsetTop;
+    let chatWindow = document.getElementById('chat-window'); 
+    let xH = chatWindow?.scrollHeight; 
+    chatWindow?.scrollTo(0, xH||0);
+  };
+};

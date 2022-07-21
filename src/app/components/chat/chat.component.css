@@ -14,6 +14,7 @@
 .card-body{
     padding: 0.5rem;
     background-image: url(https://i.pinimg.com/736x/c7/4d/c2/c74dc2f25e60e2e4fe7ed0866fd2416e.jpg);
+    overflow: scroll;
 }
 
 .imgEnviar:active{
@@ -73,4 +74,19 @@
     right: 0.5rem;
     top: 0rem;
     cursor: pointer;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.5);
+    background-color: rgb(12, 27, 165);
+    border-radius: 10%;
+    
+}
+
+.positionChat {
+    position: fixed;
+    bottom: 0;
+    right: 0.5rem;
+    width: 300px;
+}
+
+.stylechat{
+    background-color: #212529;
 }

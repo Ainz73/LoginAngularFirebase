@@ -5,3 +5,19 @@
     width: 100vw;
     height: 100vh;
 }
+
+.styleLogin{
+    background-color: #212529;
+}
+
+.styleText{
+    color: white;
+}
+
+.styleGoogle {
+    background-color: rgb(216, 107, 107);
+}
+
+.styleTextinput {
+    padding: 0.5rem;
+}
