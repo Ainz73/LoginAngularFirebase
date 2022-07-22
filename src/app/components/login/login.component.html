@@ -2,15 +2,15 @@
 
     <div class="card text-center">
       <div class="card-header styleLogin">
-        <b class="styleText">LOGIN</b>
+        <b class="styleText">Iniciar Sesion</b>
       </div>
-      <div class="card-body p-4">
-        <input class="form-control m-2 styleTextinput" type="email" placeholder="Ingrese su Email" [(ngModel)]="usuario.email" autocomplete="email" required="email">
+      <div class="card-body p-5">
+        <input class="form-control styleTextinput" type="email" placeholder="Ingrese su Email" [(ngModel)]="usuario.email" autocomplete="email" required="email">
 
-        <input class="form-control m-2 styleTextinput" type="password" placeholder="Ingrese su contraseña" [(ngModel)]="usuario.password" required="password">
+        <input class="form-control styleTextinput" type="password" placeholder="Ingrese su contraseña" [(ngModel)]="usuario.password" required="password">
         
-        <button class="btn btn-primary btn-block m-2" (click)="Ingresar()">Ingresar</button>
-        <button class="btn btn-google btn-block m-2 styleGoogle" (click)="IngresarConGoogle()">Ingresar con Google</button>
+        <button class="btn btn-primary btn-block m-2" (click)="Ingresar()" routerLink="/home">Ingresar</button>
+        <button class="btn btn-google btn-block m-2 styleGoogle" routerLink="/home" (click)="IngresarConGoogle()">Ingresar con Google</button>
         <label> Necesitas cuenta? <a routerLink="/register">Registrarse</a> </label>
         <div>
         </div>

@@ -13,6 +13,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ChatComponent } from './components/chat/chat.component';
     RegisterComponent,
     HomeComponent,
     PageNotFoundComponent,
-    ChatComponent
+    ChatComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
