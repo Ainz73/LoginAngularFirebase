@@ -10,8 +10,11 @@
         <input class="form-control stylePassword" type="password" placeholder="Ingrese su contraseña" [(ngModel)]="usuario.password">
         <input class="form-control" type="password" placeholder="Repita su contraseña" [(ngModel)]="usuario.password">
         
-        <button class="btn btn-primary btn-block m-4" (click)="registrarse()">Registrarse</button>
+        <button class="btn btn-primary btn-block m-4" routerLink="/home" (click)="registrarse()">Registrarse</button>
         <label> Ya tienes cuenta? <a routerLink="/login">Ingresar</a> </label>
+        <div>
+        <label> Al crear una cuenta estás aceptando los <a class="stylePolit" routerLink="/PoliticasYcondiciones">Términos de Servicio</a> y <a class="stylePolit" routerLink="/Private"> Privacidad</a> </label>
+        </div>
       </div>
     </div>
   </div>    

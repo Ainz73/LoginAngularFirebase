@@ -6,6 +6,9 @@ import firebase from 'firebase/compat/app';
   providedIn: 'root'
 })
 export class AuthService {
+  resetPassword(email: string) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private afauth: AngularFireAuth) { }
 
@@ -41,6 +44,16 @@ async loginWithGoogle(email: string, password: string) {
  }
  logOut(){
   return this.afauth.signOut();
+  }
+
+
+  async forgotPassword(email : string){
+    try {
+      return await this.afauth.sendPasswordResetEmail(email);
+    } catch  (err) {
+      console.log("error en enviar email");
+      return null;
+    }
   }
 
 }
