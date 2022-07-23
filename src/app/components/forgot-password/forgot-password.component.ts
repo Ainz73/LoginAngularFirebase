@@ -16,8 +16,8 @@ export class ForgotPasswordComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  resetPassword() {
-    this.authService.resetPassword(this.email);
+  forgotPassword() {
+    this.authService.forgotPassword(this.email);
     this.email = '';
   }
 
