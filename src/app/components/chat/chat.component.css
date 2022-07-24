@@ -14,7 +14,6 @@
 .card-body{
     padding: 0.5rem;
     background-image: url(https://i.pinimg.com/736x/c7/4d/c2/c74dc2f25e60e2e4fe7ed0866fd2416e.jpg);
-
 }
 
 .imgEnviar:active{
@@ -24,16 +23,17 @@
 .enviado {
     display: block;
     float: right;
-    background-color: rgb(45, 154, 182);
+    background-color: rgb(65, 128, 199);
     color: white;
     min-width: 50.01%;
     border-radius: 50px;
     text-align: left;
+    margin-bottom: 2rem;
 }
 .recibido{
     display: block;
     float: left;
-    background-color: rgb(136, 110, 151);
+    background-color: #009EDB;
     color: white;
     min-width: 50.01%;
     border-radius: 50px;
@@ -41,12 +41,12 @@
 }
 
 .contenedorDeMensajes{
-    overflow: scroll;
     padding: 0.3rem;
 }
-
-.contenedorDeMensajes::-webkit-scrollbar{
-    display: none;
+.scrollChat{
+    overflow: scroll;
+    margin-bottom: 4rem;
+    overflow-x: hidden;
 }
 
 .chatIconContainer{

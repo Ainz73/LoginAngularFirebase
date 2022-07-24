@@ -1,22 +1,26 @@
 <div class="container">
 
-    <div class="card text-center">
-      <div class="card-header styleLogin">
-        <b class="styleText">Iniciar Sesion</b>
-      </div>
+  <div class="card text-center">
+    <div class="card-header styleLogin">
+      <b class="styleText">Iniciar Sesion</b>
+    </div>
       <div class="card-body p-5">
-        <input class="form-control styleTextinput" type="email" placeholder="Ingrese su Email" [(ngModel)]="usuario.email" autocomplete="email" required="email">
+        <input class="form-control styleTextinput" type="email" placeholder="Ingrese su Email"
+          [(ngModel)]="usuario.email" autocomplete="email">
 
         <div>
-        <input class="form-control styleTextinput" type="password" placeholder="Ingrese su contraseña" [(ngModel)]="usuario.password" required="password">
-        <label class="forgotPass" style="float:left;"><a routerLink="/forgot-password">Olvidaste tu contraseña?</a></label>
-      </div>
-      <div class="card-body btnStyle" >
-        <button class="btn btn-primary btn-block m-2" (click)="Ingresar()" routerLink="/home">Ingresar</button>
-        <button class="btn btn-google btn-block m-2 styleGoogle" routerLink="/home" (click)="IngresarConGoogle()">Ingresar con Google</button>
+          <input class="form-control styleTextinput" type="password" placeholder="Ingrese su contraseña"
+            [(ngModel)]="usuario.password">
+            
+          <label class="forgotPass" style="float:left;"><a routerLink="/forgot-password">Olvidaste tu
+              contraseña?</a></label>
+        </div>
+        <div class="card-body btnStyle">
+          <button  class="btn btn-primary btn-block m-2" (click)="Ingresar()" routerLink="/home">Ingresar</button>
+          <button class="btn btn-google btn-block m-2 styleGoogle" routerLink="/home"
+            (click)="IngresarConGoogle()">Ingresar con Google</button>
         </div>
         <label> Necesitas cuenta? <a routerLink="/register">Registrarse</a> </label>
       </div>
-    </div>
   </div>
-  
+</div>

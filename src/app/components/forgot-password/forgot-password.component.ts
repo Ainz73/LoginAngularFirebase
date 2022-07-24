@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 
@@ -9,16 +10,19 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class ForgotPasswordComponent implements OnInit {
 
-  email: string = '';
+  usuario = {
+    email: ''
+  }
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  forgotPassword() {
-    this.authService.forgotPassword(this.email);
-    this.email = '';
-  }
 
+ forgotPassword() {
+    this.authService.forgotPassword(this.usuario.email);
+    this.usuario.email = '';
+  }
+  
 }

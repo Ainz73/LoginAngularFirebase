@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
-@Component({
+@Component({ 
+
   selector: 'app-chat',
   templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.css']
+  styleUrls: ['./chat.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChatComponent implements OnInit {
     
@@ -37,12 +39,15 @@ export class ChatComponent implements OnInit {
       texto: "UwU"
     }
   ];
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private changeDetector: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.authService.getUserLogged().subscribe(usuario => {
       this.usuarioLogeado = usuario;
     });
+  }
+  ngAfterViewChecked(){
+    this.changeDetector.detectChanges();
   }
   enviarMensaje() {
 
@@ -56,18 +61,18 @@ export class ChatComponent implements OnInit {
 
     this.nuevoMensaje = "";
 
-    setTimeout(() => {
-      this.scrollToTheLastElementByClassName();
-    }, 20);
-    this.scrollToTheLastElementByClassName();
+    // setTimeout(() => {
+    //   this.scrollToTheLastElementByClassName();
+    // }, 20);
+    // this.scrollToTheLastElementByClassName();
   };
 
-  scrollToTheLastElementByClassName() {
-    let elements = document.getElementsByClassName('msj');
-    let ultimo: any = elements[(elements.length - 1)]; 
-    let toppos = ultimo.offsetTop;
-    let chatWindow = document.getElementById('chat-window'); 
-    let xH = chatWindow?.scrollHeight; 
-    chatWindow?.scrollTo(0, xH||0);
-  };
+  // scrollToTheLastElementByClassName() {
+  //   let elements = document.getElementsByClassName('msj');
+  //   let ultimo: any = elements[(elements.length - 1)]; 
+  //   let toppos = ultimo.offsetTop;
+  //   let chatWindow = document.getElementById('chat-window'); 
+  //   let xH = chatWindow?.scrollHeight; 
+  //   chatWindow?.scrollTo(0, xH||0);
+  // };
 };
